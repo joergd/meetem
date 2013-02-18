@@ -1,0 +1,10 @@
+<h1><%= @person.name %></h1>
+<% if @person.video_embed_code.present? %>
+  <div class="video">
+    <%= raw @person.video_embed_code %>
+  </div>
+<% end %>
+
+<p>
+  <%= mail_to @person.email, @person.email %>
+</p>

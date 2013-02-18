@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218093155) do
+ActiveRecord::Schema.define(:version => 20130218110329) do
 
   create_table "people", :force => true do |t|
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
     t.text     "description"
-    t.string   "video_url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.text     "video_embed_code"
   end
 
 end
