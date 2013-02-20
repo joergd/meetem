@@ -1,5 +1,12 @@
-<ul>
-  <% @people.each do |person| %>
-    <li><%= link_to person.name, person_path(person) %></li>
-  <% end %>
-</ul>
+<% provide(:title, 'People') %>
+<%= link_to "Add new person", new_person_path, class: "btn btn-mini btn-primary" %>
+<h1>People</h1>
+<table>
+	<% @people.each do |person| %>
+	<tr>
+		<td><%= raw person.video_embed_code %></td>
+		<td><%= link_to person.name, person_path(person) %></td>
+		<td><%= person.phone_number %></td>
+		<% end %>
+	</tr>
+</table>

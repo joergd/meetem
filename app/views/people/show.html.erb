@@ -1,10 +1,26 @@
-<h1><%= @person.name %></h1>
-<% if @person.video_embed_code.present? %>
-  <div class="video">
-    <%= raw @person.video_embed_code %>
-  </div>
-<% end %>
+<% provide(:title, 'Show people') %>
 
-<p>
-  <%= mail_to @person.email, @person.email %>
-</p>
+<%= link_to "<< People list", people_path, class: "btn btn-mini" %>
+<h1><%= @person.name %></h1>
+<div class="row">
+	<div class="span6">
+		<div class="contact_details">
+			<span class="phone_number">
+				<%= @person.phone_number %>
+			</span>
+			<span class="email">
+				<%= mail_to @person.email, @person.email %>
+			</span>
+		</div>
+		<% if @person.video_embed_code.present? %>
+		<div class="video">
+			<%= raw @person.video_embed_code %>
+		</div>
+		<% end %>
+		<div class="description">
+			<h2>About me</h2>
+			<p><%= @person.description %></p>
+		</div>
+		<%= link_to "Edit details", edit_person_path, class: "btn btn-large btn-primary" %>
+	</div>
+</div>

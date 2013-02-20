@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "people/show.html.erb" do
   before :each do
-    assign(:person, create(:person, :email => "jon@spam.com"))
+    assign(:person, create(:person, first_name: "Jon", last_name: "Doe", email: "jon@spam.com", phone_number: "0720000000"))
   end
   it "should display the email as a mailto link" do
     render
