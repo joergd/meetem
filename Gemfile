@@ -8,6 +8,7 @@ gem 'rails', '3.2.12'
 gem 'mysql2'
 gem 'faker', '1.0.1'
 gem 'bootstrap-sass', '2.1'
+gem 'bcrypt-ruby', '3.0.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,6 +23,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'annotate', '2.5.0'
+end
 
 group :development, :test do
   gem 'rspec-rails'

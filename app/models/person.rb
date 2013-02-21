@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: people
+#
+#  id               :integer          not null, primary key
+#  email            :string(255)
+#  first_name       :string(255)
+#  last_name        :string(255)
+#  description      :text
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  video_embed_code :text
+#  phone_number     :string(255)
+#
+
 class Person < ActiveRecord::Base
   attr_accessible :description, :email, :first_name, :last_name, :video_embed_code, :phone_number
 

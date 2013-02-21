@@ -1,4 +1,7 @@
 class PeopleController < ApplicationController
+
+  before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  
   def show
     @person = Person.find(params[:id])
   end
